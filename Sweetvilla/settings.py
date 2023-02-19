@@ -23,9 +23,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'it5fm6(vg(6!ykc*6tx+5^&pj$@tzs=^51yc+5a=zg67yro1&^'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["*"]
 
 
 # Application definition
@@ -67,7 +67,6 @@ TEMPLATES = [
         },
     },
 ]
-
 WSGI_APPLICATION = 'Sweetvilla.wsgi.application'
 
 
@@ -134,4 +133,11 @@ STATIC_URL = '/static/'
 
 MEDIA_ROOT= os.path.join(BASE_DIR,'media')
 MEDIA_URL='/media/'
+STATIC_ROOT = '/var/www/static/'
+
+from django.core.wsgi import get_wsgi_application
+
+from whitenoise.middleware import WhiteNoiseMiddleware
+application = get_wsgi_application()
+application = WhiteNoiseMiddleware(application)
 
