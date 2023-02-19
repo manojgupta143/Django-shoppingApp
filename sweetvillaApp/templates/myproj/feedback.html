@@ -1,0 +1,36 @@
+<!doctype html> {%extends "myproj/base.html" %} {% block title %} Feedback page{% endblock %}{%load static %} {% block body_block %} {% with comments.count as comments_count %}
+
+<!--Feed Back Form -->
+<div class="container" id="feedback">
+    <!-- Feed Back Listed here-->
+    <h5> Feadback{{comments_count|pluralize}}<span>({{comments_count}})</span></h5>
+    {% endwith%}
+    <div class="commets">
+        {%if comments %} {%for comment in comments %}
+        <p> Feedback {{forloop.counter}} by {{comment.name}} on {{comment.created}}
+        </p>
+        <div class="cb">{{comment.body|linebreaks}}</div>
+        <hr> {%endfor%} {%else%}
+        <div class="alert alert-danger" role="alert">
+            There are NO Feadback Yet !!!
+        </div>
+        {%endif%} {%if csubmit %}
+        <!-- FeedBack Coment Added Success fully Alert-->
+        <div class="alert alert-danger" role="alert">
+            Your Feadback Added Succefully
+        </div>
+    </div>
+
+    {%else%}
+
+    <div class="comment-form">
+        <h5>Add Your Feedback</h5>
+        <!-- FeedBack Form-->
+        <hr>
+        <form method="post">
+            {{form.as_p}} {%csrf_token%}
+            <input class="btn btn-primary btn-lg" type="submit" name="" value="Submit Comment">
+        </form>
+    </div>
+</div>
+{%endif%} {%endblock%}

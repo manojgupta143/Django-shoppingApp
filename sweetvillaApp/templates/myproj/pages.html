@@ -1,0 +1,49 @@
+<!doctype html> {% load static %}
+<html lang="en">
+
+
+<head>
+    <style>
+        .page {
+            background-color: rgb(245, 221, 221);
+            border: 3px dotted silver;
+            width: 100%;
+            display: flex;
+        }
+        
+        .page a {
+            font-weight: bold;
+            font-size: 4vh;
+            color: rgb(34, 221, 34);
+            float: left;
+            margin-left: 80px;
+            text-decoration: none;
+        }
+        
+        .page a:hover {
+            color: rgb(85, 20, 20);
+        }
+        
+        .page span {
+            color: red;
+            padding: 8px;
+            font-size: 4vh;
+            font-style: italic;
+            margin-left: 20px;
+            margin-right: 10px;
+        }
+    </style>
+
+
+</head>
+
+<body>
+    {%if page.has_previous%}
+    <div class="page">
+        <a href="?page={{page.previous_page_number}}">Back</a> {% endif %}
+        <span>Explore More  {{page.number}} of Bengali Sweet {{page.paginator.num_pages}}</span>{%if page.has_next%}
+        <a href="?page={{page.next_page_number}}">Next</a> {% endif %}
+    </div>
+</body>
+
+</html>

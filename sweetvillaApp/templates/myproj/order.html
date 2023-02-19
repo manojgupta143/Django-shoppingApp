@@ -1,0 +1,24 @@
+<!doctype html> {%extends "myproj/base.html" %} {% block title_block %}order{% load static%}{%endblock%} {% block body_block %}
+<!-- if id thanks open in page then local storage clear -->
+<div>{%if thank %}
+    <div class="alert alert-danger" role="alert">
+        Your order placed successfully. You Can track Your Order By Your Tracking Id :{{id}}
+    </div>
+</div>
+
+{%endif%}
+<h1>Thanks For Shopping </h1>
+<!--Javaa script Codes-->
+{% endblock %} {% block script_block %}
+<script>
+    if (localStorage.getItem('cart') == null) {
+        var cart = {};
+    } else {
+        cart = JSON.parse(localStorage.getItem('cart'));
+    };
+    if (cart != null) {
+        localStorage.clear()
+        console.log("cart is empty")
+    }
+</script>
+{%endblock%}

@@ -1,0 +1,165 @@
+<!doctype html> {% load static %}
+<html lang="en">
+
+
+<head>
+
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/6aa5d0a737.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href='{% static "css/home.css" %}'>
+    <title>{% block title_block %} {%endblock%}</title>
+</head>
+
+<body>
+    <!--navigation bar-->
+    <nav class=" navbar navbar-expand-lg navbar-dark bg-primary fixed-top ">
+        <!--Hamberger and navigations Items -->
+        <div class="container-fluid">
+            <a class="navbar-brand " href="# ">SweetVilla.Com</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href=" /aboutus">About Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'tracker' %}">Tracker</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Products List
+                </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item " href="{% url 'internationalsweet'%}">International Sweet</a></li>
+                            <li><a class="dropdown-item " href="{% url 'indiansweet'%}">Indian Sweets</a></li>
+                            <li><a class="dropdown-item " href="{% url 'cake' %}">Cakes</a></li>
+                            <li><a class="dropdown-item " href="{% url 'icecream'%}">Ice-Cream</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="{% url 'punjabisweet' % }">Punjabi Sweets</a></li>
+                            <li><a class="dropdown-item" href="{% url 'sauth_indian_sweet'%}">Sauth Indian Sweets</a></li>
+                            <li><a class="dropdown-item" href="{% url 'gujratisweet' %}">Gujraati Sweets</a></li>
+                            <li><a class="dropdown-item" href="{% url 'bengalisweet' %}">Bengali Sweets</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item ">
+                        <a class="nav-link " href="/contactUs">Contact Us</a>
+                    </li>
+                    <li class="nav-item ">
+                        <a class="nav-link " href="/feadback ">Feedback</a>
+                    </li>
+                    <div id='login'>
+                        <a href="{% url 'signup/' %}"><i class="fa-solid fa-user-plus"></i><span>Signup</span></a>
+                        <a href="/accounts/login/"><i class="fa-solid fa-arrow-right-to-bracket"></i><span>Login</span></a>
+                        <a href="/accounts/logout/"><i class="fa-solid fa-arrow-right-from-bracket"></i><span>Logout</span></a>
+                    </div>
+                    <div class="search"><a href="{% url 'search' %}" class="solid"><i class="fa-solid fa-magnifying-glass"></i></a>
+                        <p>search</p>
+                    </div>
+
+                    <!--<button type="button" id="popcart" class="btn btn-secondary mx-2" data-html="True" data-toggle="popover" title="Popover title" data-content="And here's some amazing content. It's very engaging. Right?">Cart(<span id="cart" class="ct">0</span>)</button>-->
+                    <div class="checkoutbox">
+                        <button id="popcart" type="button" class="btn btn-secondary mx-2" data-bs-container="body" data-bs-toggle="popover" data-bs-placement="bottom" data-html="true">
+                            Cart
+                            (<span id="cart" class="ct">0</span>)
+                          </button>
+                        <a href="{% url 'checkout/' %}" target="_blank"><button class='btn btn-primary' id ='checkout'>Checkout</button></a>
+                    </div>
+
+            </div>
+        </div>
+    </nav>
+    <div class="container2 text-center " id="head">
+        <div class="row row-cols-4">
+            <div class="col">
+                <!--logo and brand name  -->
+                <h1> Sweetvilla.Com</h1>
+            </div>
+            <!--social media links  -->
+            <div class="col-6">
+                <a href="https://www.instagram.com/manugupta.786/" target="_blank"><i class="fa-brands fa-instagram fa-2xl"></i></a>
+                <a href="https://facebook.com/manoj.guptamanu.90" target="_blank"><i class="fa-brands fa-square-facebook fa-2xl"></i></a>
+                <a href="https://youtube.com/channel/UCBgqpo4FVDUIExos-ga-KQ" target="_blank"><i class="fa-brands fa-youtube fa-2xl"></i></a>
+                <a href="https://www.linkedin.com/in/manoj-gupta-7858971b6" target="_blank"><i class="fa-brands fa-linkedin fa-2xl"></i></a>
+                <a href="https://github.com/manojgupta143" target="_blank"><i class="fa-brands fa-square-github fa-2xl"></i></a>
+            </div>
+        </div>
+        <div class="col">
+            <!--copywrite  -->
+            <p> Developed By Manoj Gupta</p>
+        </div>
+    </div>
+    {% block body_block %} {%endblock%}
+    <footer>
+        <div class="sponcer">
+            <!--sponcer links  -->
+            <h1>Our Sponsors
+            </h1>
+        </div>
+        <div class="d-inline-flex  ">
+            <div class="d-flex flex-row bd-highlight  d-flex justify-content-center">
+                <div class="logo">
+                    <a href="https://www.honda2wheelersindia.com/"><img src="{% static 'images/logo/l1.png' %}" alt=""></a>
+                </div>
+                <div class="logo">
+
+                    <a href="https://www.skype.com/en/"><img src="{% static 'images/logo/l2.png' %}" alt=""></a>
+                </div>
+                <div class="logo">
+
+                    <a href="https://www.pizzahut.co.in/?utm_source=google&utm_medium=cpc&utm_campaign=iP_Devyani_Search_PR_Brand_Exact&utm_content=Brand&gclid=EAIaIQobChMInpGPhNnW9gIVcplmAh3ObAdGEAAYASAAEgI5z_D_BwE"><img src="{% static 'images/logo/l3.png' %}" alt=""></a>
+                </div>
+
+                <div class="logo">
+
+                    <a href="https://pizzaonline.dominos.co.in/?src=affiliate_collectcent_710&utm_source=affiliate&utm_medium=collectcent&utm_campaign=710"><img src="{% static 'images/logo/l4.png' %}" alt=""></a>
+                </div>
+                <div class="logo">
+
+                    <a href="https://online.kfc.co.in/"><img src="{% static 'images/logo/l5.png' %}" alt=""></a>
+                </div>
+                <div class="logo">
+
+                    <a href="https://www.apple.com/in/?afid=p238%7Cs8Vs8GkTq-dc_mtid_187079nc38483_pcrid_587090939723_pgrid_112258962467_&cid=aos-IN-kwgo-brand--slid---product-"><img src="{% static 'images/logo/l6.png' %}" alt=""></a>
+                </div>
+                <div class="logo">
+
+                    <a href="https://twitter.com/i/flow/login?input_flow_data=%7B%22requested_variant%22%3A%22eyJsYW5nIjoiZW4ifQ%3D%3D%22%7D"><img src="{% static 'images/logo/l7.png' %}" alt=""></a>
+
+
+                </div>
+            </div>
+        </div>
+
+
+        <div id="copy">
+            <span>Copyright By ManojGuptaSweetVilla.com </span>
+            <span>Created By Manoj Gupta With Help Of L</span>
+        </div>
+    </footer>
+    <!--Base scripts  -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha256-k2WSCIexGzOj3Euiig+TlR8gA0EmPjuc79OEeY5L45g=" crossorigin="anonymous"></script>
+    <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+    <script src="{% static 'js/mainjs.js'%}"></script>
+    <!--Child page scripts  -->
+    {% block script_block %} {%endblock%}
+</body>
+
+</html>

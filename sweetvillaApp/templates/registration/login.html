@@ -1,0 +1,13 @@
+<!DOCTYPE html> {%extends 'myproj/base.html'%} {%block body_block%}
+
+<div class="container cont2">
+    <h3>Login</h3><span>Don't  have an account? <a href="{% url  'signup/' %}">SignUp</a></span>
+
+    <form method="post">
+        {{form.as_p}} {% csrf_token %}
+        <input type="submit" class="btn btn-primary btn-md" data-toggle="submit" value="Login">
+    </form>
+
+</div>
+
+{%endblock%}

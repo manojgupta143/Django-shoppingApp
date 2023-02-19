@@ -1,0 +1,276 @@
+<!doctype html> {%extends "myproj/base.html" %} {% block title_block %}home page {%endblock%} {%load static %}{% block body_block %}
+<!--Parents Container  -->
+<div class="container bg">
+    <div id="demo" class="carousel slide my-3" data-ride="carousel">
+        <ul class="carousel-indicators">
+            <li data-target="#demo" data-slide-to="0" class="active"></li>
+            <li data-target="#demo" data-slide-to="1"></li>
+            <li data-target="#demo" data-slide-to="2"></li>
+
+
+        </ul>
+        <!--Home Pages Slidds Of all products  -->
+        <div class=" carousel-inner ">
+            <div class="carousel-item active">
+                <div class="row">
+                    <div class="col-xs-3 col-sm-3 col-md-3">
+                        <div class="card" style="width: 18rem;">
+                            <img src="/media/{{cake.0.images}}" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">{{cake.0.prodname|title}}</h5>
+                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                <a href="cake/"> <button type="button" id="qv{{i.id}}" class="btn btn-primary">Order Now</button></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xs-3 col-sm-3 col-md-3">
+                        <div class="card" style="width: 18rem;">
+                            <img src="/media/{{cake.1.images}}" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">{{cake.1.prodname|title}}</h5>
+                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                <a href="cake/"> <button type="button" id="qv{{i.id}}" class="btn btn-primary">Order Now</button></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xs-3 col-sm-3 col-md-3">
+                        <div class="card" style="width: 18rem;">
+                            <img src="/media/{{ic.0.images}}" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">{{ic.0.prodname|title}}</h5>
+                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                <a href="icecream" class="btn btn-primary">Go somewhere</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xs-3 col-sm-3 col-md-3">
+                        <div class="card" style="width: 18rem;">
+                            <img src="/media/{{ic.1.images}}" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">{{ic.1.prodname|title}}</h5>
+                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                <a href="icecream" class="btn btn-primary">Go somewhere</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="carousel-item">
+                <div class="row">
+                    <div class="col-xs-3 col-sm-3 col-md-3">
+                        <div class="card" style="width: 18rem;">
+                            <img src="/media/{{pb.0.images}}" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">{{pb.0.prodname|title}}</h5>
+                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                <a href="punjabisweet/" class="btn btn-primary">Go somewhere</a>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+
+
+                    <div class="col-xs-3 col-sm-3 col-md-3">
+                        <div class="card" style="width: 18rem;">
+                            <img src="/media/{{pb.1.images}}" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">{{pb.1.prodname|title}}</h5>
+                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                <a href="punjabisweet" class="btn btn-primary">Go somewhere</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xs-3 col-sm-3 col-md-3">
+                        <div class="card" style="width: 18rem;">
+                            <img src="/media/{{bs.2.images}}" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">{{bs.0.prodname|title}}</h5>
+                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                <a href="bengaliseet" class="btn btn-primary">Go somewhere</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xs-3 col-sm-3 col-md-3">
+                        <div class="card" style="width: 18rem;">
+                            <img src="/media/{{bs.3.images}}" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">{{bs.1.prodname|title}}</h5>
+                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                <a href="bengalisweet" class="btn btn-primary">Go somewhere</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="carousel-item">
+
+                <div class="row">
+                    <div class="col-xs-3 col-sm-3 col-md-3">
+                        <div class="card" style="width: 18rem;">
+                            <img src="/media/{{sauth.0.images}}" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">{{sauth.0.prodname|title}}</h5>
+                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                <a href="sauth_indian_sweet/" class="btn btn-primary">Go somewhere</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xs-3 col-sm-3 col-md-3">
+                        <div class="card" style="width: 18rem;">
+                            <img src="/media/{{ind.0.images}}" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">{{ind.0.prodname|title}}</h5>
+                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                <a href="sauth_indian_sweet/" class="btn btn-primary">Go somewhere</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xs-3 col-sm-3 col-md-3">
+                        <div class="card" style="width: 18rem;">
+                            <img src="/media/{{inter.0.images}}" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">{{inter.0.prodname|title}}</h5>
+                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                <a href="internationalsweet/" class="btn btn-primary">Go somewhere</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xs-3 col-sm-3 col-md-3">
+                        <div class="card" style="width: 18rem;">
+                            <img src="/media/{{gj.0.images}}" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">{{gj.0.prodname|title}}</h5>
+                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                <a href="gujratisweet/" class="btn btn-primary">Go somewhere</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--Paginations  -->
+<a class="carousel-control-prev " href="#demo" role="button" data-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+</a>
+<a class="carousel-control-next" href="#demo" role="button" data-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+</a>
+<font-awesome-icon icon="fa-light fa-camera-movie" />
+<!--slide show ended here-->
+<!--product section start-->
+<section>
+    <!--Headings of products sections  -->
+    <div class="cantainer" id="bg">
+        <h1>Welcome To Desert Parlour India</h1>
+        <p> We Are Providing Best and delisious Delight Full Sweet And Desert </p>
+    </div>
+
+    <!-- prodect list start here-->
+    <div id="product">
+        <div class="hd">
+            <h1>Products Listed Here</h1>
+        </div>
+        <div class="container">
+            <div class="row ">
+                <!-- prduct 1-->
+                <div class="col prodrow">
+                    <img src="{%static 'images/product/p1.png'%}" alt="Cake">
+                    <div>
+                        <h1>Cakes</h1>
+                    </div>
+                    <p> Best Indiaan Creamy Cakes Veg Or Non Veg Variaty For Every Functions </p>
+                    <span> Starting At 200-1000</p></span>
+                    <button type="button" class="btn btn-primary btn-sm"><a href="/cake/" target="_blank">Order Now</a></button>
+                </div>
+                <!-- prduct 2-->
+                <div class="col prodrow">
+                    <img src="{%static 'images/product/p4.png'%}" alt="Ice-Cream">
+                    <div>
+                        <h1>Ice-Cream</h1>
+                    </div>
+                    <p>Best Deliciouse Ice cream For Weading Parties or Every Ocation Best Creamy</p>
+                    <span> Starting At 50-500</p></span>
+                    <button type="button" class="btn btn-primary btn-sm"><a href="/icecream/">Order Now</a></button>
+                </div>
+                <!-- prduct 3-->
+                <div class="col prodrow">
+                    <img src="{%static 'images/product/p5.jpg'%}" alt="punjabi sweet">
+                    <div>
+                        <h1>Punjabi Sweets </h1>
+                    </div>
+                    <p>Best Deliciouse Punjabi Deserts Injoy The Life With Punjabi Sweet </p>
+                    <span> Starting At 200-1000</p></span>
+                    <button type="button" class="btn btn-primary btn-sm"><a href="/punjabisweet/"target="_blank">Order Now</a></button>
+                </div>
+                <!-- prduct 4-->
+                <div class="col prodrow">
+                    <img src="{%static 'images/product/p7.jpg'%}" alt="gujrati sweet">
+                    <div>
+                        <h1>Gujrati Sweets </h1>
+                    </div>
+                    <p>Fevraite And delisiouse dishes from gujrat best know place for desert </p>
+                    <span> Starting At 200-1000</p></span>
+                    <button type="button" class="btn btn-primary btn-sm"><a href="/gujratisweet/" target="_blank">Order Now</a></button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Second Row-->
+        <div class="container">
+            <div class="row ">
+                <!-- prduct 5-->
+                <div class="col prodrow">
+                    <img src="{%static 'images/product/p2.jpg'%}" alt="international Sweet">
+                    <div>
+                        <h1>International Sweet</h1>
+                    </div>
+                    <p>Best Non Indian Continental Desert Of Internation Brand </p>
+                    <span> Starting At 1000-5000</p></span>
+                    <button type="button" class="btn btn-primary btn-sm"><a href="/internationalsweet/"target="_blank">Order Now</a></button>
+                </div>
+                <!-- prduct 6-->
+                <div class="col prodrow">
+                    <img src="{%static 'images/product/p4.jpg'%}" alt="south Indian sweet ">
+                    <div>
+                        <h1>South Indian Sweet</h1>
+                    </div>
+                    <p>Best Sauth Indian Creamy Sauth Indian dishes Injoy With Your Family </p>
+                    <span> Starting At 100-1000</p></span>
+                    <button type="button" class="btn btn-primary btn-sm"><a href="/sauth_indian_sweet/"target="_blank">Order Now</a></button>
+                </div>
+                <!-- prduct 7-->
+                <div class="col prodrow">
+                    <img src="{%static 'images/product/p6.jpg'%}" alt="bengali Sweet">
+                    <div>
+                        <h1>Bengali Sweet </h1>
+                    </div>
+                    <p>Best Bengali Sweet With All Pure Deshi Ghee fully delisious helthy And Testy </p>
+                    <span> Starting At 200-1000</p></span>
+                    <button type="button" class="btn btn-primary btn-sm"><a href="/bengalisweet/"target="_blank">Order Now</a></button>
+                </div>
+                <!-- prduct 8-->
+                <div class="col prodrow">
+                    <img src="{%static 'images/product/p3.jpg'%}" alt="indian sweet">
+                    <div>
+                        <h1>Indian Sweet </h1>
+                    </div>
+                    <p>All India Femouse Desert With The Love Of all Indian faloures </p>
+                    <span> Starting At 50-500</p></span>
+                    <button type="button" class="btn btn-primary btn-sm"><a href="/indiansweet/"target="_blank">Order Now</a></button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{%endblock%}
