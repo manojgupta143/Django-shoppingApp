@@ -9,7 +9,6 @@ https://docs.djangoproject.com/en/3.0/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.0/ref/settings/
 """
-
 import os
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
@@ -42,6 +41,7 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -71,8 +71,8 @@ WSGI_APPLICATION = 'Sweetvilla.wsgi.application'
 
 
 # Database
-"""DEFAULT_AUTO_FIELD = 'django.db.models.AutoField'
-DATABASES = {
+DEFAULT_AUTO_FIELD = 'django.db.models.AutoField'
+"""DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME':'blogdata',
@@ -127,17 +127,12 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 LOGIN_REDIRECT_URL='/' 
-LOGOUT_REDIRECT_URL='/logout' 
+LOGOUT_REDIRECT_URL='/logout'
+STATIC_ROOT =os.path.join(BASE_DIR,'static')  
 STATIC_URL = '/static/'
 #managing Media Files 
 
 MEDIA_ROOT= os.path.join(BASE_DIR,'media')
 MEDIA_URL='/media/'
-STATIC_ROOT = '/var/www/static/'
 
-from django.core.wsgi import get_wsgi_application
-
-from whitenoise.middleware import WhiteNoiseMiddleware
-application = get_wsgi_application()
-application = WhiteNoiseMiddleware(application)
 
