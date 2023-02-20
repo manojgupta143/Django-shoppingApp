@@ -10,16 +10,18 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.0/ref/settings/
 """
 import os
-
+import dj_database_url
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-
+import environ
+env =environ.Env()
+environ.Env.read_env()
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'it5fm6(vg(6!ykc*6tx+5^&pj$@tzs=^51yc+5a=zg67yro1&^'
+SECRET_KEY =env('my_secrte_key')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
@@ -84,13 +86,11 @@ DEFAULT_AUTO_FIELD = 'django.db.models.AutoField'
 
 
 # Default sqllite DB
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME':  'db.sqlite3',
-    }
-}
 
+DATABASES={
+    'default' :dj_database_url.parse(env('DATABASE_URL'))
+
+}
 # Password validation
 # https://docs.djangoproject.com/en/3.0/ref/settings/#auth-password-validators
 
