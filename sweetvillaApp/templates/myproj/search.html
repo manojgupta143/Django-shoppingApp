@@ -30,7 +30,7 @@
                     {% for i in searchlList %}
                     <div class="col-xs-3 col-sm-3 col-md-3">
                         <div class="card" style="width: 18rem;">
-                            <img src='/media/{{i.images}}' class="card-img-top" alt="...">
+                            <img src='/media/{{i.images}}' class="card-img-top" alt="..." onerror="this.onerror=null;this.src='{% static 'images/product/p1.png' %}';">
                             <div class="card-body">
                                 <h5 class="card-title" id="namepr{{i.id}}">{{i.prodname|title}}</h5>
                                 <p class="card-text">{{i.desc|truncatewords:10|title|linebreaks}}</p>
