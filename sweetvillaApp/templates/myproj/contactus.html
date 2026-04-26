@@ -1,5 +1,12 @@
 {% extends 'myproj/base.html' %} {% block title %} Contact Us {% endblock %} {% block body_block %}
 <div class="container cont">
+    <!-- Back to Home Link -->
+    <div class="mb-3">
+        <a href="/" class="btn btn-outline-secondary btn-sm">
+            <i class="fas fa-arrow-left me-2"></i>Back to Home
+        </a>
+    </div>
+    
     <!--contack form -->
     <h3>Contact Us</h3>
     <form action="/contactUs/" method="post">{% csrf_token %}

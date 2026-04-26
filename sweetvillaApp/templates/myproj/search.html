@@ -1,5 +1,12 @@
 <!doctype html> {%extends "myproj/base.html" %} {% block title_block %}search {%endblock%}{%load static %} {% block body_block %}
 <div class="container" id="search">
+    <!-- Back to Home Link -->
+    <div class="mb-3">
+        <a href="/" class="btn btn-outline-secondary btn-sm">
+            <i class="fas fa-arrow-left me-2"></i>Back to Home
+        </a>
+    </div>
+    
     <form class="d-flex" role="search" method="post">{%csrf_token%}
         <input class="form-control me-2" type="text" name="search" placeholder="Search your Favorite Dish">
         <button class="btn btn-outline-success btn1" type="submit">Search</a></button>

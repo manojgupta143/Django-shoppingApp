@@ -1,6 +1,13 @@
 <!DOCTYPE html> {%extends 'myproj/base.html'%} {%block body_block%}
 
 <div class="container cont2">
+    <!-- Back to Home Link -->
+    <div class="mb-3">
+        <a href="/" class="btn btn-outline-secondary btn-sm">
+            <i class="fas fa-arrow-left me-2"></i>Back to Home
+        </a>
+    </div>
+    
     <h3>Login</h3><span>Don't  have an account? <a href="{% url  'signup/' %}">SignUp</a></span>
 
     <form method="post">

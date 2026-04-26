@@ -14,17 +14,18 @@ import dj_database_url
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 import environ
-env =environ.Env()
+
+env = environ.Env()
 environ.Env.read_env()
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY =env('secrte_key')
+SECRET_KEY = env('SECRET_KEY', default='django-insecure-local-dev-key')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = env.bool('DEBUG', default=True)
 
 ALLOWED_HOSTS = ["*"]
 
@@ -85,12 +86,20 @@ DEFAULT_AUTO_FIELD = 'django.db.models.AutoField'
     }}"""
 
 
-# Default sqllite DB
-
-DATABASES={
-    'default' :dj_database_url.parse(env('DATABASE_URL'))
-
-}
+# Default SQLite DB.
+# Set USE_DATABASE_URL=True only when you intentionally want remote DB.
+USE_DATABASE_URL = env.bool('USE_DATABASE_URL', default=False)
+if USE_DATABASE_URL:
+    DATABASES = {
+        'default': dj_database_url.parse(env('DATABASE_URL'))
+    }
+else:
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        }
+    }
 # Password validation
 # https://docs.djangoproject.com/en/3.0/ref/settings/#auth-password-validators
 

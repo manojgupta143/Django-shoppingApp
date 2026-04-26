@@ -1,5 +1,12 @@
 <!doctype html> {%extends "myproj/base.html" %} {% block title %}My Awesome Cart{% endblock %}{%load static %} {% block body_block %}
 <div class="container">
+    <!-- Back to Home Link -->
+    <div class="mb-3 mt-3">
+        <a href="/" class="btn btn-outline-secondary btn-sm">
+            <i class="fas fa-arrow-left me-2"></i>Back to Home
+        </a>
+    </div>
+    
     <div class="col my-4">
         <h2> Enter Your Order Id and Email address to track your order </h2>
         <form method="post">{% csrf_token %}

@@ -2,6 +2,13 @@
 
 <!--Feed Back Form -->
 <div class="container" id="feedback">
+    <!-- Back to Home Link -->
+    <div class="mb-3">
+        <a href="/" class="btn btn-outline-secondary btn-sm">
+            <i class="fas fa-arrow-left me-2"></i>Back to Home
+        </a>
+    </div>
+    
     <!-- Feed Back Listed here-->
     <h5> Feadback{{comments_count|pluralize}}<span>({{comments_count}})</span></h5>
     {% endwith%}
