@@ -5,9 +5,9 @@
 
 :root {
     /* Color Palette */
-    --primary-color: #e74c3c;
-    --primary-dark: #c0392b;
-    --primary-light: #f8b4b4;
+    --primary-color: #3498db;
+    --primary-dark: #2980b9;
+    --primary-light: #a3d4f7;
     --secondary-color: #2c3e50;
     --accent-color: #f39c12;
     --success-color: #27ae60;
@@ -74,7 +74,10 @@ html {
 
 body {
     font-family: var(--font-primary);
-    background-color: var(--light-bg);
+    background: linear-gradient(45deg, rgba(255,255,255,0.9), rgba(232,244,248,0.9)), url('../images/backg/bg1.jpg');
+    background-size: 400% 400%, cover;
+    background-position: center;
+    animation: gradientShift 15s ease infinite;
     color: var(--gray-900);
     line-height: var(--line-height-base);
     overflow-x: hidden;
@@ -119,7 +122,7 @@ a:hover {
    =================================== */
 
 .navbar-custom {
-    background: linear-gradient(135deg, var(--secondary-color) 0%, #34495e 100%) !important;
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%) !important;
     box-shadow: var(--shadow-lg);
     padding: var(--spacing-sm) 0;
     transition: all var(--transition-base);
@@ -1008,5 +1011,21 @@ a:hover {
     
     .social-links {
         justify-content: center;
+    }
+}
+
+/* ===================================
+   ANIMATIONS
+   =================================== */
+
+@keyframes gradientShift {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
     }
 }
