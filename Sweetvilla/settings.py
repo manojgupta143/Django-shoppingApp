@@ -11,27 +11,45 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 """
 import os
 import dj_database_url
+
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-import environ
 
-env = environ.Env()
-environ.Env.read_env()
+# A small environment helper so the app works even if django-environ
+# is not installed or if the environment is configured directly.
+
+def env_get(name, default=None):
+    return os.environ.get(name, default)
+
+
+def env_bool(name, default=False):
+    value = os.environ.get(name)
+    if value is None:
+        return default
+    return str(value).strip().lower() in ('true', '1', 'yes', 'y')
+
+
+def env_list(name, default=None):
+    value = os.environ.get(name)
+    if value is None:
+        return default or []
+    return [item.strip() for item in value.split(',') if item.strip()]
+
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = env('SECRET_KEY', default='django-insecure-local-dev-key')
+SECRET_KEY = env_get('SECRET_KEY', 'django-insecure-local-dev-key')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = env.bool('DEBUG', default=True)
+DEBUG = env_bool('DEBUG', default=True)
 
-ALLOWED_HOSTS = env.list(
+ALLOWED_HOSTS = env_list(
     'ALLOWED_HOSTS',
     default=['127.0.0.1', 'localhost']
 )
-CSRF_TRUSTED_ORIGINS = env.list('CSRF_TRUSTED_ORIGINS', default=[])
+CSRF_TRUSTED_ORIGINS = env_list('CSRF_TRUSTED_ORIGINS', default=[])
 
 
 # Application definition
@@ -92,11 +110,11 @@ DEFAULT_AUTO_FIELD = 'django.db.models.AutoField'
 
 # Default SQLite DB.
 # Set USE_DATABASE_URL=True only when you intentionally want remote DB.
-USE_DATABASE_URL = env.bool('USE_DATABASE_URL', default=False)
+USE_DATABASE_URL = env_bool('USE_DATABASE_URL', default=False)
 if USE_DATABASE_URL:
     DATABASES = {
         'default': dj_database_url.config(
-            default=env('DATABASE_URL'),
+            default=env_get('DATABASE_URL'),
             conn_max_age=600,
             ssl_require=not DEBUG
         )
