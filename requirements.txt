@@ -10,3 +10,4 @@ pycparser==2.21
 sqlparse==0.4.3
 tzdata==2022.7
 Pillow>=9.0.0
+setuptools>=65.0.0
