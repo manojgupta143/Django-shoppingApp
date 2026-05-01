@@ -31,9 +31,9 @@ def contact(request):
         email=request.POST.get('email', '')
         phone=request.POST.get('phone', '')
         desc=request.POST.get('desc', '')
-        contact =Contact(name=name, email=email, phone=phone, detail=desc)
+        contact = Contact(name=name, email=email, phone=phone, detail=desc)
         contact.save()
-        return HttpResponseRedirect(request,'myroj/contacttq.html')
+        return render(request, 'myproj/contacttq.html')
     return render(request,'myproj/contactus.html')
 
 #tracker Order Update
@@ -89,8 +89,8 @@ def search(request):
 def productView(request, id):
     product=Product.objects.filter(id=id)
     return render(request, "myproj/prodView.html",{'product':product})
-from.forms import feedbackform
-from.models import Feadback
+from .forms import feedbackform
+from .models import Feadback
 
 #feedback Form view 
 def feedback(request): 

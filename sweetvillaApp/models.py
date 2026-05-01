@@ -51,7 +51,7 @@ class Feadback(models.Model):
     class Meta:
         ordering=('-created',)
     def __str__(self):
-        return 'Commented by{} on {}'.format(self.name,self.prodname)
+        return f'Commented by {self.name}'
 
 #order tracker Model
 class OrderUpdate(models.Model):
@@ -60,7 +60,7 @@ class OrderUpdate(models.Model):
     update_desc= models.CharField(max_length=5000)
     timestamp= models.DateField(auto_now_add= True)
 
-def __str__(self):
-    return self.update_desc[0:7] + "..."
+    def __str__(self):
+        return self.update_desc[0:7] + "..."
 # Create your models here.
 
